@@ -28,7 +28,7 @@ const dijkstraMap = new Map();
 function isAccessible(from, to) {
   let alphabet = "abcdefghijklmnopqrstuvwxyz";
 
-  if (alphabet.indexOf(to) - 1 <= alphabet.indexOf(from)) {
+  if (alphabet.indexOf(to) + 1 >= alphabet.indexOf(from)) {
     return true;
   }
 
@@ -65,8 +65,8 @@ function visitSlot(x, y, currentSteps) {
   }
 }
 
-visitSlot(startIndexes.x, startIndexes.y, 0);
-let minimumSteps = dijkstraMap.get(endIndexes.x + "-" + endIndexes.y);
+visitSlot(endIndexes.x, endIndexes.y, 0);
+let minimumSteps = dijkstraMap.get(startIndexes.x + "-" + startIndexes.y);
 
 console.log(
   "The minimum steps of getting from start to end is:",
@@ -89,9 +89,7 @@ startPositions = startPositions.filter(p => {
 });
 
 for (let pos of startPositions) {
-  dijkstraMap.clear();
-  visitSlot(pos.x, pos.y, 0);
-  stepsArray.push(dijkstraMap.get(endIndexes.x + "-" + endIndexes.y))
+  stepsArray.push(dijkstraMap.get(pos.x + "-" + pos.y))
 }
 
 minimumSteps = null;
