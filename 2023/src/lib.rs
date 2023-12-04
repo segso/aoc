@@ -13,10 +13,11 @@ mod environment;
 pub fn run(day: Day, environment: Environment) {
     let day = *day;
 
-    let day: Box<dyn Challenge> = Box::new(match day {
-        1 => ChallengeOne,
+    let day: Box<dyn Challenge> = match day {
+        1 => Box::new(ChallengeOne),
+        2 => Box::new(ChallengeTwo),
         _ => unimplemented!("Missing solution for challenge {day}"),
-    });
+    };
 
     let path = day.path(environment);
 
