@@ -24,7 +24,7 @@ fn calculate_vibration_value(input: &str) -> u32 {
     input
         .lines()
         .map(|line| {
-            let mut iter = line.chars().filter(|value| value.is_ascii_digit());
+            let mut iter = line.chars().filter(char::is_ascii_digit);
 
             let zero_ascii = '0' as u32;
             let first = iter.next().unwrap();

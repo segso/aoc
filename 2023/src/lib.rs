@@ -2,12 +2,12 @@ use std::fs;
 
 use challenge::Challenge;
 use challenges::prelude::*;
-pub use day::{Day, DayError};
+pub use day::Day;
 pub use environment::Environment;
 
 pub mod challenge;
 mod challenges;
-mod day;
+pub mod day;
 mod environment;
 
 pub fn run(day: Day, environment: Environment) {
