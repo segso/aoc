@@ -1,0 +1,9 @@
+LR
+
+AAA = (BBB, CCC)
+EEA = (EEB, EEA)
+EEB = (EEA, EEC)
+EEC = (EEZ, AAA)
+EEZ = (EEZ, EEZ)
+BBB = (DDD, ZZZ)
+ZZZ = (ZZZ, ZZZ)
