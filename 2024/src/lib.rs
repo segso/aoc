@@ -15,6 +15,7 @@ pub fn run(day: Day, environment: Environment) {
 
     let day: Box<dyn Challenge> = match day {
         1 => Box::new(ChallengeOne),
+        2 => Box::new(ChallengeTwo),
         _ => unimplemented!("Missing solution for challenge {day}"),
     };
 
