@@ -21,6 +21,7 @@ pub fn run(day: Day, environment: Environment) {
         5 => Box::new(ChallengeFive),
         6 => Box::new(ChallengeSix),
         7 => Box::new(ChallengeSeven),
+        8 => Box::new(ChallengeEight),
         _ => unimplemented!("Missing solution for challenge {day}"),
     };
 
