@@ -7,6 +7,7 @@ mod challenge_fourteen;
 mod challenge_nine;
 mod challenge_one;
 mod challenge_seven;
+mod challenge_seventeen;
 mod challenge_six;
 mod challenge_ten;
 mod challenge_thirteen;
@@ -24,6 +25,7 @@ pub mod prelude {
     pub use super::challenge_nine::ChallengeNine;
     pub use super::challenge_one::ChallengeOne;
     pub use super::challenge_seven::ChallengeSeven;
+    pub use super::challenge_seventeen::ChallengeSeventeen;
     pub use super::challenge_six::ChallengeSix;
     pub use super::challenge_ten::ChallengeTen;
     pub use super::challenge_thirteen::ChallengeThirteen;
