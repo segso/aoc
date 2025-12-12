@@ -8,7 +8,7 @@ pub enum Error {
     /// # Examples
     ///
     /// ```
-    /// use year2024::{Day, day::Error};
+    /// use year2025::{Day, day::Error};
     ///
     /// let day = Day::from(26);
     /// assert!(day.is_err());
