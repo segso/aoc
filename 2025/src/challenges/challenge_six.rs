@@ -1,6 +1,6 @@
 use crate::{Day, challenge::Challenge};
 
-fn get(grid: &Vec<Vec<char>>, x: usize, y: usize) -> char {
+fn get(grid: &[Vec<char>], x: usize, y: usize) -> char {
     let Some(row) = grid.get(y) else {
         return ' ';
     };
@@ -29,20 +29,23 @@ impl Challenge for ChallengeSix {
 
         for i in 0..width {
             let operation = grid[height - 1][i];
+            let mut result = 1;
+
+            for row in grid.iter().take(height - 1) {
+                let num = row[i].parse::<u64>().unwrap();
+
+                if operation == "+" {
+                    result += num;
+                } else {
+                    result *= num;
+                }
+            }
 
             if operation == "+" {
-                let mut result = 0;
-                for j in 0..height - 1 {
-                    result += grid[j][i].parse::<u64>().unwrap();
-                }
-                total += result;
-            } else {
-                let mut result = 1;
-                for j in 0..height - 1 {
-                    result *= grid[j][i].parse::<u64>().unwrap();
-                }
-                total += result;
+                result -= 1;
             }
+
+            total += result;
         }
 
         let grid = input
